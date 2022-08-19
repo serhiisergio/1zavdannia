@@ -3,7 +3,8 @@ import styles from "./Card.module.css";
 
 class Card extends Component {
   render() {
-    return <div className={styles.card}>{this.props.children}</div>;
+    const { children } = this.props;
+    return <div className={styles.card}>{children}</div>;
   }
 }
 

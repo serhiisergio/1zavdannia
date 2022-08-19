@@ -1,14 +1,35 @@
 import React, { Component } from "react";
 
 class InputField extends Component {
+  // handleChange = (e) => {
+  //   // console.log(e.target.value);
+  //   this.setState({
+  //     [e.target.id]: e.target.value,
+  //   });
+  //   this.props.getState(this.state);
+  // };
   render() {
+    const {
+      htmlFor,
+      text,
+      type,
+      id,
+      placeholder,
+      required,
+      value,
+      handleInputChange,
+    } = this.props;
+
     return (
       <div>
-        <label htmlFor={this.props.htmlFor}>{this.props.text}</label>
+        <label htmlFor={htmlFor}>{text}</label>
         <input
-          type={this.props.type}
-          id={this.props.id}
-          placeholder={this.props.placeholder}
+          type={type}
+          id={id}
+          placeholder={placeholder}
+          required={required}
+          defaultValue={value}
+          onChange={handleInputChange}
         />
       </div>
     );

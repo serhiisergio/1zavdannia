@@ -1,16 +1,39 @@
 import React, { Component } from "react";
 
 class TextArea extends Component {
+  // state = {
+  //   aboutMe: null,
+  //   stack: null,
+  //   project: null,
+  // };
+  // handleChange = (e) => {
+  //   this.setState({ [e.target.id]: e.target.value });
+  //   this.props.getState(this.state);
+  // };
   render() {
+    const {
+      htmlFor,
+      text,
+      id,
+      name,
+      cols,
+      rows,
+      placeholder,
+      value,
+      handleInputChange,
+    } = this.props;
     return (
       <div>
-        <label htmlFor={this.props.htmlFor}>{this.props.text}</label>
+        <label htmlFor={htmlFor}>{text}</label>
         <textarea
-          id={this.props.id}
-          name={this.props.name}
-          cols={this.props.cols}
-          rows={this.props.rows}
-          placeholder={this.props.placeholder}
+          id={id}
+          name={name}
+          cols={cols}
+          rows={rows}
+          placeholder={placeholder}
+          value={value}
+          onChange={handleInputChange}
+          // onChange={this.handleChange}
         />
       </div>
     );
